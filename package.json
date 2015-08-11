@@ -1,0 +1,26 @@
+{
+  "name": "angular",
+  "version": "0.0.0",
+  "description": "estoy aprendiendo angularjs",
+  "main": "components/appModule.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dirfb612/angular.git"
+  },
+  "keywords": [
+    "angular",
+    "diana"
+  ],
+  "author": "diana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dirfb612/angular/issues"
+  },
+  "homepage": "https://github.com/Dirfb612/angular#readme",
+  "dependencies": {
+    "angular": "^1.4.2"
+  }
+}

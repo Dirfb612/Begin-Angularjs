@@ -1,0 +1,39 @@
+<h1>hola soy {{diana.name}} </h1>
+
+<!--
+<button ng-click="diana.getFrameworks()">get frameworks</button>
+-->
+<!--
+<pre>{{diana.frameworks | json}}</pre>-->
+
+
+<div>
+   <!-- <div>{{framework.name}} - {{framework.company}}</div>-->
+   <table class="tabla1">
+      <thead>
+         <th>Name</th>
+         <th>Company</th>
+         <th>Post</th>
+      </thead>
+      <tr ng-repeat="framework in diana.frameworks">
+         <td>
+            {{framework.id}}
+         </td>
+         <td>
+            {{framework.name}}
+         </td>
+         <td>{{framework.company}}</td>
+      </tr>
+   </table>
+</div>
+
+<form ng-submit="diana.submit()" name="frameworkForm">
+   <label for="framework">Framework</label>
+   <input id="framework" type="text" name="framework" ng-model="diana.form.framework"/>
+   <label for="company">Company</label>
+   <input id="company" type="text" name="company" ng-model="diana.form.company"/>
+   <input type="submit" value="send"/>
+</form>
+
+<p id="demo"></p>
+
