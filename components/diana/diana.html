@@ -14,6 +14,7 @@
          <th>Name</th>
          <th>Company</th>
          <th>Post</th>
+         <th >Borrar</th>
       </thead>
       <tr ng-repeat="framework in diana.frameworks">
          <td>
@@ -23,7 +24,9 @@
             {{framework.name}}
          </td>
          <td>{{framework.company}}</td>
+         <td class="miCursor" ng-click="diana.removeFramework(framework)">X</td>
       </tr>
+
    </table>
 </div>
 
@@ -35,5 +38,6 @@
    <input type="submit" value="send"/>
 </form>
 
+<button type="submit"  ng-click="diana.removeId()" >DeleteId</button>
 <p id="demo"></p>
 

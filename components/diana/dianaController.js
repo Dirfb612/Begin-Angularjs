@@ -15,6 +15,7 @@
 
         //self.getFrameworks = getFrameworks;
         self.submit = submit;
+        self.removeFramework = removeFramework;
 
       /*  function getFrameworks() {
             myFactory.getFrameworks().then(function (response) {
@@ -41,6 +42,13 @@
 
         }
 
+        function removeFramework(obj){
+            console.log('--- obj ---');
+            console.log(obj);
+            var index = self.frameworks.indexOf(obj);
+            self.frameworks.splice(index, 1);
+            //data.id.splice(0,1);
+        }
 
     }
 
