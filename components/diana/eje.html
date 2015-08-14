@@ -1,0 +1,36 @@
+<div class="panel panel-default" >
+   <div class="panel-heading"><h2>Example</h2></div>
+   <div class="panel-body" ng-hide="isHidden">
+      Name:<input type="text" ng-model="name"/>{{name}} <span ng-bind="name"></span>
+   </div>
+   <div class="panel-footer">
+      Hide: <input type="checkbox" ng-model="isHidden"/>
+      <br/>
+      <button ng-click="name='Mochi'" class="btn btn-default">Change Name</button>
+   </div>
+</div>
+<div class="panel panel-default" >
+   <div class="panel-heading"><h3>Iterating through data with ng‐repeat</h3></div>
+   <div ng-init="BU=['Dave','Jeff','Heedy','Danny']">
+      <ul>
+         <li ng-repeat="name in BU">{{ name }}</li>
+      </ul>
+   </div>
+</div>
+
+<div class="panel panel-default" ng-init="data={name:'James', isVisible:true, loggedIn:true, status:'navy'}">
+   <div ng-cloak>
+      <div  ng-switch="data.loggedIn">
+         <div ng-switch-when="true" ng-class="data.status">
+            Welcome: {{data.name}}
+         </div>
+         <div ng-switch-default ng-class="data.status">Login "false"</div>
+      </div>
+      <br/>
+      <div ng-show="data.isVisible">
+         Name: <input type="text" ng-model="data.name"/>
+         {{name.name}}
+      </div>
+   </div>
+</div>
+

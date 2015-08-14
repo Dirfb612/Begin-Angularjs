@@ -14,7 +14,8 @@
 
         return {
             getFrameworks: getFrameworks,
-            postFrameworks:  postFrameworks
+            postFrameworks:  postFrameworks,
+            getSymbols: getSymbols
         };
 
         function getFrameworks() {
@@ -28,10 +29,22 @@
         }
         
         function postFrameworks(data) {
-            return $http.post(API_URL + '/framework', data).success(function(data) {
-                console.log('--- data ---');
+            return $http.post(API_URL + '/framework', data)
+                .success(function(data) {
+                console.log('--- data ---');np
                 console.log(data)
             })
+        }
+
+        function getSymbols(){
+
+            return $http.get(API_URL + '/symbols')
+                .success(function(datos){
+
+                    console.log('--- datos ---');
+                    console.dir(datos);
+
+                });
         }
 
 

@@ -1,43 +1,75 @@
-<h1>hola soy {{diana.name}} </h1>
+<div class="container">
 
-<!--
-<button ng-click="diana.getFrameworks()">get frameworks</button>
--->
-<!--
-<pre>{{diana.frameworks | json}}</pre>-->
+   <div class="page-header">
+      <h1>Hola {{diana.name}} </h1>
+   </div>
 
+   <!--
+   <button ng-click="diana.getFrameworks()">get frameworks</button>
+   -->
+   <!--
+   <pre>{{diana.frameworks | json}}</pre>-->
 
-<div>
-   <!-- <div>{{framework.name}} - {{framework.company}}</div>-->
-   <table class="tabla1">
-      <thead>
+   <div class="panel panel-default">
+      <div class="panel-heading"><h2>Consultando de /Frameworks</h2></div>
+      <!-- <div>{{framework.name}} - {{framework.company}}</div>-->
+      <table class="table table-striped">
+         <thead>
+         <th>Post</th>
          <th>Name</th>
          <th>Company</th>
-         <th>Post</th>
-         <th >Borrar</th>
-      </thead>
-      <tr ng-repeat="framework in diana.frameworks">
-         <td>
-            {{framework.id}}
-         </td>
-         <td>
-            {{framework.name}}
-         </td>
-         <td>{{framework.company}}</td>
-         <td class="miCursor" ng-click="diana.removeFramework(framework)">X</td>
-      </tr>
+         <th>Borrar</th>
+         </thead>
+         <tr ng-repeat="framework in diana.frameworks | orderBy:'company'">
+            <td>
+               {{framework.id}}
+            </td>
+            <td>
+               {{framework.name}}
+            </td>
+            <td>{{framework.company}}</td>
+            <td class="miCursor" ng-click="diana.removeFramework(framework)">X</td>
+         </tr>
 
-   </table>
+      </table>
+   </div>
+
+
+   <div class="panel panel-default">
+      <div class="panel-heading"><h2>Consultando de /Symbols</h2></div>
+      <table class="table table-striped">
+         <thead>
+         <th>Symbol</th>
+         <th>Price</th>
+         </thead>
+         <tr ng-repeat="symbol in diana.precios">
+            <td>{{symbol.symbol}}</td>
+            <td>{{symbol.price}}</td>
+         </tr>
+      </table>
+   </div>
+
+   <div class="panel panel-primary">
+      <div class="panel-heading"><h2>Enviando datos a framework</h2></div>
+
+      <form ng-submit="diana.submit()" name="frameworkForm" class="navbar-form navbar-left">
+         <div class="form-group">
+            <label for="framework" class="label label-primary">Framework</label>
+            <input id="framework" type="text" name="framework" ng-model="diana.form.framework" class="form-control"/>
+         </div>
+         <br/>
+
+         <div class="form-group">
+            <label for="company" class="label label-primary">Company</label>
+            <input id="company" type="text" name="company" ng-model="diana.form.company" class="form-control"/>
+         </div>
+         <br/>
+         <input type="submit" value="send" class="btn btn-default" />
+         <button type="button" class="close" data-dismiss="alert" >
+            <span aria-hidden="true">&times;</span>
+         </button>
+      </form>
+   </div>
+
 </div>
-
-<form ng-submit="diana.submit()" name="frameworkForm">
-   <label for="framework">Framework</label>
-   <input id="framework" type="text" name="framework" ng-model="diana.form.framework"/>
-   <label for="company">Company</label>
-   <input id="company" type="text" name="company" ng-model="diana.form.company"/>
-   <input type="submit" value="send"/>
-</form>
-
-<button type="submit"  ng-click="diana.removeId()" >DeleteId</button>
-<p id="demo"></p>
 

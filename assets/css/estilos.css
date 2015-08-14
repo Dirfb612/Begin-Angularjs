@@ -1,3 +1,4 @@
+/*
 .wrap {
   margin: 0 auto;
   width: 960px; }
@@ -34,4 +35,52 @@ th {
 .miCursor {
   cursor: pointer; }
 
+.div2 {
+  margin: 0 auto;
+  border: 2px solid red;
+  width: 20%;
+  margin-bottom: 10px; }
+
+table {
+  margin: 0 auto; }
+
+h1, h2 {
+  color: #609af9;
+  text-align: center; }
+
+form {
+  margin: 0 auto;
+  border-radius: 5px;
+  background: grey;
+  padding: 10px; }
+
+.myForm {
+  margin: 0 auto;
+  width: 20%; }
+*/
+.col-sm-6{
+  background: #1aaf5d;
+}
+.col-sm-3{
+  background: #2c97de;
+}
+.col-sm-4{
+  background: #1ECE6D;
+}
+.col-sm-8{
+  background: #9C56B8;
+}
+
+.red{
+  color: red;
+}
+.navy{
+ color: navy;
+}
+
+[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{
+ display: none !important;}
+
+.miCursor {
+  cursor: pointer; }
 /*# sourceMappingURL=estilos.css.map */

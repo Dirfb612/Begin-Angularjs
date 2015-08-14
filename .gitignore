@@ -1,6 +1,9 @@
 #.idea
 .idea
 
+#.sass-cache
+.sass-cache
+
 # Logs
 logs
 *.log
