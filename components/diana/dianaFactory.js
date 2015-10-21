@@ -31,7 +31,7 @@
         function postFrameworks(data) {
             return $http.post(API_URL + '/framework', data)
                 .success(function(data) {
-                console.log('--- data ---');np
+                console.log('--- data ---');
                 console.log(data)
             })
         }
