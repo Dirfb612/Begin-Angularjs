@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app">
+<html lang="en" ng-app="app" xmlns="http://www.w3.org/1999/html">
 <head>
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,6 +37,15 @@
       </div>
 
    </nav>
+
+   <!--<div change-case></div>-->
+   <form role="form" name="myform">
+      <div class="form-group">
+         <label>View Value:</label>
+         <input name="someinput" changecase ng-model="some_letters.value">
+      </div>
+   </form>
+
    <ng-view><!--Here show the pages--></ng-view>
 </div>
 
@@ -52,6 +61,8 @@
 <script src="components/exampleDirectives/exampleDirective.js"></script>
 <script src="components/exampleDirectives/exampleController.js"></script>
 <script src="components/exampleDirectives/exampleDirective2.js"></script>
+
+<script src="components/validators/validatorDirective.js"> </script>
 
 
 <script src="node_modules/jquery/dist/jquery.js"></script>
