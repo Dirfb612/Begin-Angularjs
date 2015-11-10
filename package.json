@@ -1,5 +1,5 @@
 {
-  "name": "angular",
+  "name": "automation",
   "version": "0.0.0",
   "description": "estoy aprendiendo angularjs",
   "main": "components/appModule.js",
@@ -22,5 +22,8 @@
   "homepage": "https://github.com/Dirfb612/angular#readme",
   "dependencies": {
     "angular": "^1.4.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0"
   }
 }
