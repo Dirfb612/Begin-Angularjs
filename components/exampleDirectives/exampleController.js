@@ -11,12 +11,14 @@
       $scope.usuario1 = {
          nombre: 'john',
          apellido: 'Doe',
-         email: 'johndoe@example.com'
+         email: 'johndoe@example.com',
+         price: '1000000'
       };
       $scope.usuario2 = {
          nombre: 'Jane',
          apellido: 'Doe',
-         email: 'janedoe@example.com'
+         email: 'janedoe@example.com',
+         price: '1000000'
       };
 
       $scope.rows = [
@@ -28,36 +30,53 @@
             "time": "0.02"
          },
          {
-            "branch": "default",
-            "comment": "",
-            "name": "20141226.022147",
-            "score": "0.56000",
+            "branch": "diana",
+            "comment": "hola soy diana",
+            "name": "dipro",
+            "score": "10",
             "time": "6.00"
          },
          {
-            "branch": "default",
+            "branch": "jero",
             "comment": "",
-            "name": "20141226.022112",
-            "score": "0.56000",
+            "name": "blackend",
+            "score": "5000",
             "time": "3.00"
          },
          {
-            "branch": "default",
-            "comment": "",
-            "name": "20141226.021955",
-            "score": "0.55000",
+            "branch": "mateo",
+            "comment": "re lol",
+            "name": "lol",
+            "score": "1000",
             "time": "3.00"
          },
          {
-            "branch": "default",
-            "comment": "",
-            "name": "20141226.021920",
-            "score": "0.49000",
+            "branch": "abracu",
+            "comment": "crm",
+            "name": "novation",
+            "score": "10.000",
             "time": "10.00"
          }];
-      $scope.cols = Object.keys($scope.rows[0]);
-      
+
+
+      //   $scope.cols = Object.keys($scope.rows[0]);
+         $scope.cols = {
+       "branch": "Rama  ",
+       "comment": "Hola jero tas bien?",
+       "name": "Nombre",
+       "score": "Rango",
+       "time": "Tiempo"
+       };
+/*      $scope.colsw = {
+         "Rama": "branch",
+         "commen": "comment",
+         "Nombr": "name",
+         "Rango": "score",
+         "Tiempo": "time"
+      };
+     $scope.cols = Object.keys($scope.colsw[1]);*/
+/*
       console.log('--- $scope.cols ---');
-      console.log($scope.cols);
+      console.log($scope.cols);*/
    }
 }());

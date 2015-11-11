@@ -1,0 +1,8 @@
+<table border="1">
+   <tr>
+      <th ng-repeat="header in headerTable">{{header}}</th>
+   </tr>
+   <tr ng-repeat="row in datasource">
+      <td ng-repeat="column in row">{{column}}</td>
+   </tr>
+</table>
