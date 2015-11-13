@@ -13,32 +13,36 @@
             datasource: '=datasource',
             headerTable: '=headerTable'
          },
-         compile: compile,
-         //template: '<a href="mailto:{{usuario.email}}">{{usuario}} </a>',
-         templateUrl: 'components/exampleDirectives/templateTable.html'
-
+         //compile: compile,
+         templateUrl: 'components/exampleDirectives/templateTable.html',
+     /*    link: function (scope, element, attrs) {
+            scope.$watch('datasource', function (datasource) {
+               angular.forEach(datasource, function (location, key) {
+                  scope.datasource[key]['Codigo'] = $filter('lowercase')(scope.datasource[key]['Codigo']);
+               });
+            });
+         },*/
+         controller: exampleTableController,
+         controllerAs: 'exampleTableCtrl'
+        // bindToController: true
       };
 
-      function compile(tElement, tAttrs, scope) {
+   }
 
-         console.log('---  tElement---');
-         console.log(tElement);
+   exampleTableController.$inject = ['$scope','$filter'];
 
-         return {
-            post: post
-         };
+   function exampleTableController($scope,$filter) {
 
-         function post(scope, element, attrs) {
-            console.log('--- scope ---');
-            console.log(scope.datasource);
+      $scope.$watchCollection('datasource', function (datasource) {
+         console.log('--- datasource controller ---');
+         console.log(datasource);
+         angular.forEach(datasource, function (location, key) {
+            $scope.datasource[key]['Codigo'] = $filter('lowercase')($scope.datasource[key]['Codigo']);
+         });
 
-            scope.datasource.forEach(function (prop , item) {
-               scope.datasource[item]['time']=$filter('currency')(scope.datasource[item]['time']);
-            });
 
-         }
+      });
 
-      }
 
    }
 }());

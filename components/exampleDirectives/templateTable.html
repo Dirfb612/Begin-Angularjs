@@ -1,8 +1,17 @@
+<!--<table border="1">
+   <tr>
+      <th ng-repeat="header in headerTable track by $index">{{header}}</th>
+   </tr>
+   <tr ng-repeat="row in datasource track by $index">
+      <td ng-repeat="column in row track by $index ">{{column}}</td>
+   </tr>
+</table>-->
+
 <table border="1">
    <tr>
-      <th ng-repeat="header in headerTable">{{header}}</th>
+      <th ng-repeat="header in headerTable track by $index">{{header}}</th>
    </tr>
-   <tr ng-repeat="row in datasource">
-      <td ng-repeat="column in row">{{column}}</td>
+   <tr ng-repeat="row in datasource track by $index">
+      <td ng-repeat="column in row track by $index ">{{column}}</td>
    </tr>
 </table>

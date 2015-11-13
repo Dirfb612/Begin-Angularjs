@@ -6,7 +6,25 @@
       .controller('UsersController', UsersController);
 
 
-   function UsersController($scope) {
+   UsersController.inject = ['myFactory'];
+
+   function UsersController($scope, myFactory) {
+
+      activate();
+      function activate() {
+         myFactory.getJson().then(function (response) {
+            $scope.rowsJson = response;
+            console.log('---  $scope.rowsJson---');
+            console.log($scope.rowsJson);
+            $scope.colsJson = Object.keys($scope.rowsJson[0]);
+            console.log('--- $scope.colsJson ---');
+            console.log($scope.colsJson);
+
+         });
+      }
+
+
+
 
       $scope.usuario1 = {
          nombre: 'john',
@@ -60,23 +78,25 @@
 
 
       //   $scope.cols = Object.keys($scope.rows[0]);
-         $scope.cols = {
-       "branch": "Rama  ",
-       "comment": "Hola jero tas bien?",
-       "name": "Nombre",
-       "score": "Rango",
-       "time": "Tiempo"
-       };
-/*      $scope.colsw = {
-         "Rama": "branch",
-         "commen": "comment",
-         "Nombr": "name",
-         "Rango": "score",
-         "Tiempo": "time"
+      $scope.cols = {
+         "branch": "Rama  ",
+         "comment": "Hola jero tas bien?",
+         "name": "Nombre",
+         "score": "Rango",
+         "time": "Tiempo"
       };
-     $scope.cols = Object.keys($scope.colsw[1]);*/
-/*
-      console.log('--- $scope.cols ---');
-      console.log($scope.cols);*/
+      /*      $scope.colsw = {
+       "Rama": "branch",
+       "commen": "comment",
+       "Nombr": "name",
+       "Rango": "score",
+       "Tiempo": "time"
+       };
+       $scope.cols = Object.keys($scope.colsw[1]);*/
+      /*
+       console.log('--- $scope.cols ---');
+       console.log($scope.cols);*/
+
+
    }
 }());

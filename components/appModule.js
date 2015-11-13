@@ -3,7 +3,7 @@
 
    angular
       .module('app', ['ngRoute', 'diana'])
-      .constant('API_URL', 'http://192.168.80.26:1989')
+      .constant('API_URL', 'http://192.168.80.17:1989')
       .config(config);
 
    config.$inject = ['$routeProvider'];
