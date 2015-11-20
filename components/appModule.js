@@ -36,6 +36,11 @@
             controller: 'PaginatorController',
             controllerAs: 'paginatorCtrl'
          })
+         .when('/pag', {
+            templateUrl: 'components/paginator/pag.html',
+            controller: 'contentCtrl',
+            controllerAs: 'pagCtrl'
+         })
          .otherwise({redirectTo: '/'});
    }
 }());
