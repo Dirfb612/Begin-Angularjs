@@ -8,41 +8,40 @@
 
    function exampleTable($filter) {
       return {
-         restrict: 'A',
-         scope: {
+         restrict: 'E',
+         scope: {},
+         //compile: compile,
+         templateUrl: 'components/exampleDirectives/templateTable.html',
+         bindToController: {
             datasource: '=datasource',
             headerTable: '=headerTable'
          },
-         //compile: compile,
-         templateUrl: 'components/exampleDirectives/templateTable.html',
-     /*    link: function (scope, element, attrs) {
-            scope.$watch('datasource', function (datasource) {
-               angular.forEach(datasource, function (location, key) {
-                  scope.datasource[key]['Codigo'] = $filter('lowercase')(scope.datasource[key]['Codigo']);
-               });
-            });
-         },*/
          controller: exampleTableController,
-         controllerAs: 'exampleTableCtrl'
-        // bindToController: true
+         controllerAs: 'tableCtrl'
       };
 
    }
 
-   exampleTableController.$inject = ['$scope','$filter'];
+   exampleTableController.$inject = ['$scope', '$filter'];
 
-   function exampleTableController($scope,$filter) {
+   function exampleTableController($scope, $filter) {
 
-      $scope.$watchCollection('datasource', function (datasource) {
-         console.log('--- datasource controller ---');
-         console.log(datasource);
+      console.log('--- $scope ---');
+      console.log($scope);
+
+      var self = this;
+
+      self.currentPage = 1;
+      self.pageSize = 10;
+      self.maxSize = 10;
+
+
+      $scope.$watchCollection('tableCtrl.datasource', function (datasource) {
+
          angular.forEach(datasource, function (location, key) {
-            $scope.datasource[key]['Codigo'] = $filter('lowercase')($scope.datasource[key]['Codigo']);
+            self.datasource[key]['Codigo'] = $filter('lowercase')(self.datasource[key]['Codigo']);
          });
-
-
       });
-
 
    }
 }());

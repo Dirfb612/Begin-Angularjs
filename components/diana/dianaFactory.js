@@ -41,10 +41,6 @@
 
          return $http.get(API_URL + '/symbols')
             .success(function (datos) {
-
-               console.log('--- datos ---');
-               console.dir(datos);
-
             });
       }
 
