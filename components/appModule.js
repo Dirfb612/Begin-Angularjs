@@ -2,8 +2,8 @@
    'use strict';
 
    angular
-      .module('app', ['ngRoute', 'diana'])
-      .constant('API_URL', 'http://192.168.80.26:1989')
+      .module('app', ['diana','ngRoute','ngAnimate', 'ui.bootstrap'])
+      .constant('API_URL', 'http://localhost:1989')
       .config(config);
 
    config.$inject = ['$routeProvider'];
@@ -30,6 +30,11 @@
             templateUrl: 'components/exampleDirectives/exampleDirective.html',
             controller: 'UsersController',
             controllerAs: 'UsersCtrl'
+         })
+         .when('/paginator', {
+            templateUrl: 'components/paginator/paginator.html',
+            controller: 'PaginatorController',
+            controllerAs: 'paginatorCtrl'
          })
          .otherwise({redirectTo: '/'});
    }

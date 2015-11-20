@@ -6,7 +6,8 @@ angular
          scope: {
             usuario: '='
          },
-         template: '<a href="mailto:{{usuario.email}}">{{usuario.nombre}} {{usuario.apellido}}</a>',
+         //template: '<a href="mailto:{{usuario.email}}">{{usuario}} </a>',
+         template: '<span >{{usuario.price | currency}} </span>',
          replace: true
       };
    }]);

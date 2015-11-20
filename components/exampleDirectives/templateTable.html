@@ -1,0 +1,36 @@
+<!--<table border="1">
+   <tr>
+      <th ng-repeat="header in headerTable track by $index">{{header}}</th>
+   </tr>
+   <tr ng-repeat="row in datasource track by $index">
+      <td ng-repeat="column in row track by $index ">{{column}}</td>
+   </tr>
+</table>-->
+
+<table class="table table-striped">
+   <thead>
+   <tr>
+      <th ng-repeat="header in tableCtrl.headerTable track by $index">{{header | uppercase}}</th>
+   </tr>
+   </thead>
+   <tbody>
+   <tr ng-repeat="row in tableCtrl.datasource  | startFrom : (tableCtrl.currentPage - 1) * tableCtrl.pageSize   | limitTo : tableCtrl.pageSize">
+
+      <td ng-repeat="column in row track by $index "
+          ng-bind="column"></td>
+   </tr>
+   </tbody>
+</table>
+
+<uib-pagination total-items="tableCtrl.datasource.length"
+                ng-model="tableCtrl.currentPage"
+                max-size="tableCtrl.maxSize"
+                boundary-links="true"
+                direction-links="true"
+                rotate="false"
+                previous-text="Anterior"
+                next-text="Siguiente"
+                first-text="Primero"
+                last-text="Ultimo">
+
+</uib-pagination>
