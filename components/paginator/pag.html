@@ -1,6 +1,6 @@
 <section class="main">
    <div ng-repeat="friend in pagCtrl.filteredFriends">
-      {{friend.name}}
+      {{friend.Codigo}}
    </div>
    <pagination total-items="pagCtrl.totalItems" items-per-page="pagCtrl.itemsPerPage" ng-model="pagCtrl.currentPage"
                ng-change="pagCtrl.pageChanged()"></pagination>
@@ -11,4 +11,3 @@
       Current Page: {{pagCtrl.currentPage}}
    </p>
 </section>
-

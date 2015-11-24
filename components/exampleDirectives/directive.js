@@ -3,7 +3,6 @@
 
    angular.module('app').directive('tabla', tabla);
 
-   tabla.$inject = [''];
 
    function tabla() {
 
@@ -15,10 +14,8 @@
             directivevariable: '='
          },
          controller: function () {
-
-
-
             var vm = this;
+            console.log('hola');
             console.log(vm);
             vm.controllerVariable = 'Hi, I am from the controller';
             vm.controllerAdapted = vm.directivevariable + '(ctrl adapted)';
