@@ -31,6 +31,7 @@
 
 
       function activate() {
+
          myFactory.getJson().then(function (response) {
             self.rowsJson = response;
             self.colsJson = Object.keys(self.rowsJson[0]);

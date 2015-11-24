@@ -14,7 +14,8 @@
    </tr>
    </thead>
    <tbody>
-   <tr ng-repeat="row in tableCtrl.datasource  | startFrom : (tableCtrl.currentPage - 1) * tableCtrl.pageSize   | limitTo : tableCtrl.pageSize">
+<!--   <tr ng-repeat="row in tableCtrl.datasource  | startFrom : tableCtrl.currentPage  | limitTo : tableCtrl.pageSize">-->
+   <tr ng-repeat="row in tableCtrl.filteredData">
 
       <td ng-repeat="column in row track by $index "
           ng-bind="column"></td>

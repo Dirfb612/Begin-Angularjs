@@ -7,9 +7,14 @@
 
    function startFrom() {
 
-      return function (dataGet, start) {
+      return function (dataGet, currentPage) {
 
-         return dataGet.slice(start);
+         var pageSize=10;
+
+         var begin = (currentPage - 1) * pageSize;
+         var end = begin + pageSize;
+
+         return dataGet.slice(begin, end);
       }
    }
 
