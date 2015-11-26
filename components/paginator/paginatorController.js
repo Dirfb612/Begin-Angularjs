@@ -31,16 +31,16 @@
 
 
       function activate() {
-
          myFactory.getJson().then(function (response) {
             self.rowsJson = response;
             self.colsJson = Object.keys(self.rowsJson[0]);
+            self.columns = self.colsJson;
          });
-
-         myFactory.getFrameworks().then(function (response) {
-            self.dataRes = response.data;
-            self.colDateRes = Object.keys(self.dataRes[0]);
-         });
+         /*
+          myFactory.getFrameworks().then(function (response) {
+          self.dataRes = response.data;
+          self.colDateRes = Object.keys(self.dataRes[0]);
+          });*/
 
       }
 

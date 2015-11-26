@@ -10,15 +10,21 @@
 <table class="table table-striped">
    <thead>
    <tr>
-      <th ng-repeat="header in tableCtrl.headerTable track by $index">{{header | uppercase}}</th>
+      <th ng-repeat="header in tableCtrl.headertable track by $index">{{header | uppercase}}</th>
    </tr>
    </thead>
    <tbody>
-<!--   <tr ng-repeat="row in tableCtrl.datasource  | startFrom : tableCtrl.currentPage  | limitTo : tableCtrl.pageSize">-->
-   <tr ng-repeat="row in tableCtrl.filteredData">
+   <!--   <tr ng-repeat="row in tableCtrl.datasource  | startFrom : tableCtrl.currentPage  | limitTo : tableCtrl.pageSize">-->
+   <!--  <tr ng-repeat="row in tableCtrl.filteredData">-->
+   <!--<tr ng-repeat="row
+   in tableCtrl.datasource.slice(((tableCtrl.currentPage-1)*tableCtrl.itemsPerPage), ((tableCtrl.currentPage)*tableCtrl.itemsPerPage))">-->
 
-      <td ng-repeat="column in row track by $index "
-          ng-bind="column"></td>
+
+<!--   <tr ng-repeat="row in tableCtrl.datasource  | startFrom : tableCtrl.currentPage  | limitTo : tableCtrl.itemsPerPage">-->
+   <tr ng-repeat="row in tableCtrl.datasource.slice(((tableCtrl.currentPage-1)*tableCtrl.itemsPerPage), ((tableCtrl.currentPage)*tableCtrl.itemsPerPage))">
+
+
+      <td ng-repeat="column in  tableCtrl.columns track by $index " ng-bind="row[column]"></td>
    </tr>
    </tbody>
 </table>
@@ -32,6 +38,7 @@
                 previous-text="Anterior"
                 next-text="Siguiente"
                 first-text="Primero"
-                last-text="Ultimo">
+                last-text="Ultimo"
+                items-per-page="tableCtrl.itemsPerPage">
 
 </uib-pagination>
