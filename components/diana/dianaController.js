@@ -59,9 +59,6 @@
                     self.symbols = res.data;
                     self.precios = getPrecioMayor(res.data, 150.00);
                 });
-
-
-
         }
 
         function getPrecioMayor(simbolos, min) {
@@ -82,6 +79,9 @@
             return simbolos.filter(function(simbolo) {
                 return simbolo.price > min;
             });
+
+           console.log('--- hola  ---');
+           console.log();
 
         }
 

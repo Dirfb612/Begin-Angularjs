@@ -11,62 +11,20 @@
 </head>
 <body>
 <div class="container">
-   <nav class="navbar navbar-inverse">
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-         <ul class="nav navbar-nav">
-            <li><a href="#/">Incio <span class="sr-only">(current)</span></a></li>
-            <li><a href="#/diana">Diana</a></li>
-            <li><a href="#/eje">Ejemplo</a></li>
-            <li><a href="#/ejemplos">Ejemplo 2</a></li>
-            <li class="dropdown">
-               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Dropdown <span class="caret"></span></a>
-               <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">One more separated link</a></li>
-               </ul>
-            </li>
-         </ul>
 
-      </div>
 
-   </nav>
+   <navigation></navigation>
 
-   <!--<div change-case></div>-->
-   <form role="form" name="myform">
-      <div class="form-group">
-         <label>View Value:</label>
-         <input name="someinput" changecase ng-model="some_letters.value">
-      </div>
-   </form>
-
-   <ng-view><!--Here show the pages--></ng-view>
 </div>
 
-<script src="assets/node_modules/angular/angular.js"></script>
-<script src="assets/node_modules/angular-route/angular-route.js"></script>
-
-<script src="components/appModule.js"></script>
-
-<script src="components/diana/dianaModule.js"></script>
-<script src="components/diana/dianaController.js"></script>
-<script src="components/diana/dianaFactory.js"></script>
-<script src="components/diana/ejemplos/ejeController.js"></script>
-<script src="components/exampleDirectives/exampleDirective.js"></script>
-<script src="components/exampleDirectives/exampleController.js"></script>
-<script src="components/exampleDirectives/exampleDirective2.js"></script>
-
-<script src="components/validators/validatorDirective.js"> </script>
 
 
 <script src="node_modules/jquery/dist/jquery.js"></script>
-<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/angular-route/angular-route.js"></script>
+
+<script src="components/appModule.js"></script>
+<script src="components/navigation/navigation.directive.js"></script>
 
 
 </body>
