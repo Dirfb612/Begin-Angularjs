@@ -1,6 +1,6 @@
 (function() {
    'use strict';
 
-   angular.module('diana', []);
+   angular.module('diana', ['ngAnimate', 'ui.bootstrap','ngSanitize']);
 
 }());

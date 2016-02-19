@@ -1,21 +1,59 @@
-<br class="panel panel-default" >
-   <div class="panel-heading"><h2>Example View & Controller</h2></div>
-   Filter: <input type="text" ng-model="customerFilter.name"/>
-   <br/><br/>
-   <table  class="table table-striped">
-      <thead>
-        <th ng-click="ejec.doSort('name')" class="miCursor">Name</th>
-        <th ng-click="ejec.doSort('city')" class="miCursor">City</th>
-        <th ng-click="ejec.doSort('orderTotal')" class="miCursor">Order Total</th>
-        <th ng-click="ejec.doSort('joined')" class="miCursor">Joined</th>
-      </thead>
-      <tr ng-repeat="cust in ejec.customers | filter:customerFilter | orderBy:ejec.sortBy:reverse">
-         <td>{{cust.name}}</td>
-         <td>{{cust.city}}</td>
-         <td>{{cust.orderTotal | currency}}</td>
-         <td>{{cust.joined | date}}</td>
-      </tr>
-   </table>
-   <br/>
-   <span>Total Customers {{ejec.customers.length}}</span>
-</div>
+<!--<script type="text/ng-template" id="customTemplate.html">
+   <a>
+      <img ng-src="http://upload.wikimedia.org/wikipedia/commons/thumb/{{match.model.flag}}"
+           width="16">
+      <span ng-bind-html="match.label | uibTypeaheadHighlight:query"></span>
+   </a>
+</script>-->
+<script type="text/ng-template" id="typeahead-item.html">
+   <div class="typeahead-group-header"
+        ng-if="match.model.firstInGroup">Desc {{match.model.group}}</div>
+   <a>
+      <span ng-bind-html="match.label | uibTypeaheadHighlight:query"></span>
+   </a>
+</script>
+
+
+<!--<div class='container-fluid typeahead-demo'>
+
+   <h4>Custom templates for results</h4>
+   <pre>Model: {{customSelected2 | json}}</pre>
+   <input type="text" ng-model="customSelected2"
+          placeholder="Custom template"
+          uib-typeahead="state as state.name for state in ejec.statesWithFlags | filter:{name:$viewValue}"
+          typeahead-template-url="customTemplate.html"
+          class="form-control"
+          typeahead-show-hint="true"
+          typeahead-min-length="0">
+
+</div>-->
+
+<input type="text" class="form-control" placeholder="Users loaded from local database"
+       ng-model="selectedUser"
+       uib-typeahead="user as user.name for user in ejec.getUsers($viewValue)"
+       typeahead-template-url="typeahead-item.html"/>
+<pre>{{selectedUser | json}}</pre>
+
+<br class="panel panel-default">
+<div class="panel-heading"><h2>Example View & Controller</h2></div>
+Filter: <input type="text" ng-model="customerFilter.name"/>
+<br/><br/>
+<table class="table table-striped">
+   <thead>
+   <th ng-click="ejec.doSort('name')" class="miCursor">Name</th>
+   <th ng-click="ejec.doSort('city')" class="miCursor">City</th>
+   <th ng-click="ejec.doSort('orderTotal')" class="miCursor">Order Total</th>
+   <th ng-click="ejec.doSort('joined')" class="miCursor">Joined</th>
+   </thead>
+   <tr ng-repeat="cust in ejec.customers | filter:customerFilter | orderBy:ejec.sortBy:reverse">
+      <td>{{cust.name}}</td>
+      <td>{{cust.city}}</td>
+      <td>{{cust.orderTotal | currency}}</td>
+      <td>{{cust.joined | date}}</td>
+   </tr>
+</table>
+<br/>
+<span>Total Customers {{ejec.customers.length}}</span>
+
+
+

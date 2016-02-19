@@ -58,29 +58,71 @@ form {
   margin: 0 auto;
   width: 20%; }
 */
-.col-sm-6{
-  background: #1aaf5d;
-}
-.col-sm-3{
-  background: #2c97de;
-}
-.col-sm-4{
-  background: #1ECE6D;
-}
-.col-sm-8{
-  background: #9C56B8;
+.col-sm-6 {
+    background: #1aaf5d;
 }
 
-.red{
-  color: red;
-}
-.navy{
- color: navy;
+.col-sm-3 {
+    background: #2c97de;
 }
 
-[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{
- display: none !important;}
+.col-sm-4 {
+    background: #1ECE6D;
+}
+
+.col-sm-8 {
+    background: #9C56B8;
+}
+
+.red {
+    color: red;
+}
+
+.navy {
+    color: navy;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
 
 .miCursor {
-  cursor: pointer; }
+    cursor: pointer;
+}
+
 /*# sourceMappingURL=estilos.css.map */
+
+/*
+.typeahead-demo .custom-popup-wrapper {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    background-color: #f9f9f9;
+}
+
+.typeahead-demo .custom-popup-wrapper > .message {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    color: #868686;
+}
+
+.typeahead-demo .custom-popup-wrapper > .dropdown-menu {
+    position: static;
+    float: none;
+    display: block;
+    min-width: 160px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+*/
+
+pre { margin-top: 10px; }
+.typeahead-group-header {
+    padding: 3px 20px;
+    border-bottom: 1px solid black;
+    font-weight: bold;
+}

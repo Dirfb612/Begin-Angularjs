@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Dirfb612/angular#readme",
   "dependencies": {
-    "angular": "^1.4.2"
+    "angular": "^1.4.2",
+    "lodash": "^4.5.0"
   }
 }
