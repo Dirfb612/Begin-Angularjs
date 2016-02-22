@@ -95,6 +95,9 @@
 
       function getUsers(search) {
          var filtered = filterFilter(users, search);
+         
+         console.log('--- filtered ---');
+         console.log(filtered);
 
          var results = _(filtered)
             .groupBy('group')
