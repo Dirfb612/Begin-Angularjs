@@ -14,7 +14,8 @@
          templateUrl: 'components/exampleDirectives/templateTable.html',
          bindToController: {
             datasource: '=datasource',
-            headerTable: '=headerTable'
+            headertable: '=headertable',
+            columns: '=columns'
          },
          controller: exampleTableController,
          controllerAs: 'tableCtrl'
@@ -26,39 +27,48 @@
 
    function exampleTableController($scope, $filter) {
 
+      console.log('--- $scope ---');
+      console.log($scope);
+
       var self = this;
       self.data = [];
 
       self.currentPage = 1;
-      self.pageSize = 10;
+      self.pageSize = 9;
       self.maxSize = 10;
+      self.itemsPerPage = 9;
 
       //access to scope to get the datasource
       $scope.$watchCollection('tableCtrl.datasource', function (datasource) {
 
-         self.data = datasource;
 
+         if (datasource !== undefined) {
+            self.data = datasource;
+         }
          angular.forEach(datasource, function (location, key) {
             self.datasource[key].Codigo = $filter('lowercase')(self.datasource[key].Codigo);
          });
 
-         if (datasource != null) {
-            //whatch the currentPage to filter the datasource
-            $scope.$watchCollection('tableCtrl.currentPage + tableCtrl.itemsPerPage', function () {
+         /*  if (datasource != null) {
+          //whatch the currentPage to filter the datasource
 
-               var begin = ((self.currentPage - 1) * self.pageSize),
-                  end = begin + self.pageSize;
+          console.log('--- self.data ---');
+          console.log(self.data);
+          $scope.$watchCollection('tableCtrl.currentPage', function () {
 
-               console.log('--- begin ---');
-               console.log(begin);
+          var begin = ((self.currentPage - 1) * self.pageSize),
+          end = begin + self.pageSize;
 
-               console.log('--- end ---');
-               console.log(end);
+          console.log('--- begin ---');
+          console.log(begin);
 
-               self.filteredData = self.data.slice(begin, end);
+          console.log('--- end ---');
+          console.log(end);
 
-            });
-         }
+          self.filteredData = self.data.slice(begin, end);
+
+          });
+          }*/
 
 
       });
